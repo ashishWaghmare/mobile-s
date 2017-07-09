@@ -2,13 +2,19 @@ package com.example.ashwaghm.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
+
+import com.example.ashwaghm.myapplication.delivery.ResultRecyclerViewAdapter;
+import com.example.ashwaghm.myapplication.delivery.StudentRecyclerViewAdapter;
+import com.example.ashwaghm.myapplication.dummy.StudentContent;
 
 /**
  * An activity representing a single Student detail screen. This
@@ -61,6 +67,8 @@ public class StudentDetailActivity extends AppCompatActivity {
                     .add(R.id.student_detail_container, fragment)
                     .commit();
         }
+
+
     }
 
     @Override
@@ -78,4 +86,7 @@ public class StudentDetailActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-}
+
+
+
+    }

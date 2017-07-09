@@ -27,10 +27,10 @@ public class StudentContent {
 
     static {
         // Add some sample items.
-        addItem(new Student("123","Sonia Gandhi","Congress Leader"));
-        addItem(new Student("124","Narendar Modi","BJP Leader"));
-        addItem(new Student("125","Rahul Gandhi","Congress Leader"));
-        addItem(new Student("126","Amit Shah","BJP Leader"));
+        addItem(new Student("123","Aryan Shri","Need improvements"));
+        addItem(new Student("124","Shrinivas Rathi","Good in Maths"));
+        addItem(new Student("125","Rahul Gajan","Strong all over"));
+        addItem(new Student("126","Amit Bala","Poor in discipline"));
         for (int i = 1; i <= COUNT; i++) {
             addItem(createDummyItem(i));
         }

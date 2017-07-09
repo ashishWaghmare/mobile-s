@@ -1,16 +1,22 @@
 package com.example.ashwaghm.myapplication;
 
 import android.app.Activity;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.ashwaghm.myapplication.delivery.ResultRecyclerViewAdapter;
 import com.example.ashwaghm.myapplication.dummy.Student;
 import com.example.ashwaghm.myapplication.dummy.StudentContent;
+import com.example.ashwaghm.myapplication.dummy.StudentResult;
+
+import java.util.List;
 
 /**
  * A fragment representing a single Student detail screen.
@@ -60,11 +66,16 @@ public class StudentDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.result_list, container, false);
 
-        // Show the dummy content as text in a TextView.
-        if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.student_detail)).setText(mItem.details);
-        }
+        //TODO convert to recycle view
+        View recyclerView = rootView.findViewById(R.id.result_list_recycle);
+        assert recyclerView != null;
+        setupRecyclerView((RecyclerView) recyclerView);
 
         return rootView;
+    }
+
+    private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
+        mItem = StudentContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+        recyclerView.setAdapter(new ResultRecyclerViewAdapter(mItem.getResult()));
     }
 }
