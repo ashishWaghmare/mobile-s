@@ -30,6 +30,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.activeandroid.ActiveAndroid;
 import com.example.ashwaghm.myapplication.dummy.ParentContent;
 
 import java.util.ArrayList;
@@ -84,6 +85,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+        ActiveAndroid.initialize(this);
     }
 
      /*

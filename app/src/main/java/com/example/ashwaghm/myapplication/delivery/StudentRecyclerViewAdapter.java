@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.example.ashwaghm.myapplication.R;
 import com.example.ashwaghm.myapplication.StudentDetailActivity;
 import com.example.ashwaghm.myapplication.StudentDetailFragment;
-import com.example.ashwaghm.myapplication.dummy.Student;
+import com.example.ashwaghm.myapplication.model.Student;
 
 import java.util.List;
 

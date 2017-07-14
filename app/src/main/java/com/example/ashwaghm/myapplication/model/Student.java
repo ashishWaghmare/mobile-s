@@ -1,4 +1,8 @@
-package com.example.ashwaghm.myapplication.dummy;
+package com.example.ashwaghm.myapplication.model;
+
+import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,10 +11,18 @@ import java.util.List;
  * Created by ashwaghm on 08-Jul-17.
  */
 
-public class Student {
+@Table(name = "Students")
+public class Student extends Model {
+
+    @Column(name = "Id")
     public final String id;
+    @Column(name = "content")
     public final String content;
+
+    @Column(name = "Details")
     public final String details;
+
+    @Column(name = "StudentResult")
     public List<StudentResult> result = new ArrayList<>();
 
     {

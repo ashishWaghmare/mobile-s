@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.ashwaghm.myapplication.R;
-import com.example.ashwaghm.myapplication.dummy.Score;
+import com.example.ashwaghm.myapplication.model.Score;
 
 import java.util.List;
 

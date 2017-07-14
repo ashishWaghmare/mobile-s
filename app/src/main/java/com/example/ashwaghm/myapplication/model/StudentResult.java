@@ -1,4 +1,8 @@
-package com.example.ashwaghm.myapplication.dummy;
+package com.example.ashwaghm.myapplication.model;
+
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
+import com.example.ashwaghm.myapplication.model.Score;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +12,11 @@ import java.util.List;
  * Created by ashwaghm on 08-Jul-17.
  */
 
+@Table(name = "Students")
 public class StudentResult {
+    @Column(name="ExamName")
     public final String examName;
+    @Column(name="Score ")
     public final List<Score> scoreList = new ArrayList<>();
 
     public StudentResult(String examName) {

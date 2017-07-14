@@ -9,14 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.ashwaghm.myapplication.delivery.ResultRecyclerViewAdapter;
-import com.example.ashwaghm.myapplication.dummy.Student;
+import com.example.ashwaghm.myapplication.model.Student;
 import com.example.ashwaghm.myapplication.dummy.StudentContent;
-import com.example.ashwaghm.myapplication.dummy.StudentResult;
-
-import java.util.List;
 
 /**
  * A fragment representing a single Student detail screen.

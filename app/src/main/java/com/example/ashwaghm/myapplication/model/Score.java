@@ -1,16 +1,19 @@
-package com.example.ashwaghm.myapplication.dummy;
+package com.example.ashwaghm.myapplication.model;
 
-import android.widget.TextView;
-
-import java.util.Random;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
 
 /**
  * Created by ashwaghm on 08-Jul-17.
  */
 
+@Table(name = "Scores")
 public class Score {
+    @Column(name = "Subject")
     public String subject;
+    @Column(name = "Max")
     public String max;
+    @Column(name = "Scored")
     public String scored;
 
     Score(String subject, String scored, String max) {

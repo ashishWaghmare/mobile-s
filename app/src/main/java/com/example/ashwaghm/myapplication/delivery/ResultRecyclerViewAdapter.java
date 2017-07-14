@@ -5,13 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.ashwaghm.myapplication.R;
-import com.example.ashwaghm.myapplication.dummy.Student;
-import com.example.ashwaghm.myapplication.dummy.StudentResult;
+import com.example.ashwaghm.myapplication.model.StudentResult;
 
 import java.util.List;
 
