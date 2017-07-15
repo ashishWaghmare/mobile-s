@@ -14,6 +14,7 @@ import com.example.ashwaghm.myapplication.contracts.Students;
 import com.example.ashwaghm.myapplication.delivery.ResultRecyclerViewAdapter;
 import com.example.ashwaghm.myapplication.model.Student;
 import com.example.ashwaghm.myapplication.dummy.StudentContent;
+import com.example.ashwaghm.myapplication.persistence.LocalDbStudents;
 
 /**
  * A fragment representing a single Student detail screen.
@@ -33,7 +34,7 @@ public class StudentDetailFragment extends Fragment {
      */
     private Student mItem;
 
-    private Students mList = StudentContent.getInstance();
+    private Students mList = LocalDbStudents.getInstance();
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the

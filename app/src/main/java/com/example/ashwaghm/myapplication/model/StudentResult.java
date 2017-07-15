@@ -13,7 +13,7 @@ import java.util.List;
  * Created by ashwaghm on 08-Jul-17.
  */
 
-@Table(name = "Students")
+@Table(name = "StudentResults", id = "dbId")
 public class StudentResult extends Model {
     @Column(name = "ExamName")
     public String examName;

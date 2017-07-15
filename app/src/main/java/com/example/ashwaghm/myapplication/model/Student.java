@@ -11,30 +11,31 @@ import java.util.List;
  * Created by ashwaghm on 08-Jul-17.
  */
 
-@Table(name = "Students")
+@Table(name = "Students", id = "dbId")
 public class Student extends Model {
 
     @Column(name = "Id")
-    public  String id;
+    public String id;
     @Column(name = "content")
-    public  String content;
+    public String content;
 
     @Column(name = "Details")
     public String details;
 
-    @Column(name = "StudentResult")
+    @Column(name = "StudentResults")
     public List<StudentResult> result = new ArrayList<>();
 
-    public void dummydata(){
+    public Student dummydata() {
         getResult().add(new StudentResult("Unit-1").dummydata());
         getResult().add(new StudentResult("Unit-2").dummydata());
         getResult().add(new StudentResult("Term-1").dummydata());
         getResult().add(new StudentResult("Unit-1").dummydata());
         getResult().add(new StudentResult("Unit-2").dummydata());
         getResult().add(new StudentResult("Term-1").dummydata());
+        return this;
     }
 
-    Student(){
+    Student() {
 
     }
 

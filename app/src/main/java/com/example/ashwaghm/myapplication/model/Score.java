@@ -8,7 +8,7 @@ import com.activeandroid.annotation.Table;
  * Created by ashwaghm on 08-Jul-17.
  */
 
-@Table(name = "Scores")
+@Table(name = "Scores", id = "dbId")
 public class Score extends Model {
     @Column(name = "Subject")
     public String subject;
@@ -29,6 +29,7 @@ public class Score extends Model {
 
     Score(String subject, String max) {
         this.subject = subject;
+        this.max = max;
     }
 
     public String pretty() {

@@ -14,6 +14,7 @@ import android.view.View;
 import com.example.ashwaghm.myapplication.contracts.Students;
 import com.example.ashwaghm.myapplication.delivery.StudentRecyclerViewAdapter;
 import com.example.ashwaghm.myapplication.dummy.StudentContent;
+import com.example.ashwaghm.myapplication.persistence.LocalDbStudents;
 
 import static android.support.v4.app.NavUtils.navigateUpFromSameTask;
 
@@ -33,7 +34,7 @@ public class StudentListActivity extends AppCompatActivity {
      */
     private boolean mTwoPane;
 
-    private Students mStudents = StudentContent.getInstance();
+    private Students mStudents = LocalDbStudents.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
