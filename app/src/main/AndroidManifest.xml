@@ -44,9 +44,27 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.ashwaghm.myapplication.StudentListActivity" />
         </activity>
-        <meta-data android:name="AA_DB_NAME" android:value="skool.db" />
-        <meta-data android:name="AA_DB_VERSION" android:value="2" />
-        <meta-data android:name="AA_MODELS" android:value="com.example.ashwaghm.myapplication.model.Student,com.example.ashwaghm.myapplication.model.StudentResult,com.example.ashwaghm.myapplication.model.Score"/>
+
+        <service android:name=".messaging.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".messaging.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="skool.db" />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="2" />
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="com.example.ashwaghm.myapplication.model.Student,com.example.ashwaghm.myapplication.model.StudentResult,com.example.ashwaghm.myapplication.model.Score" />
     </application>
 
 </manifest>
