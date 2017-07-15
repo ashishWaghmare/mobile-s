@@ -27,7 +27,7 @@ public class StudentContent implements Students {
     private static final Map<String, Student> ITEM_MAP = new HashMap<String, Student>();
 
     private static final int COUNT = 0;
-    private static StudentContent instance;
+
 
     static {
         // Add some sample items.
@@ -76,4 +76,5 @@ public class StudentContent implements Students {
         }
         return instance;
     }
+    private static StudentContent instance;
 }
