@@ -16,24 +16,15 @@ public class Student extends Model {
 
     @Column(name = "Id")
     public String id;
-    @Column(name = "content")
+
+    @Column(name = "Content")
     public String content;
 
-    @Column(name = "Details")
-    public String details;
+    @Column(name = "Detail")
+    public String detail;
 
     @Column(name = "StudentResults")
     public List<StudentResult> result = new ArrayList<>();
-
-    public Student dummydata() {
-        getResult().add(new StudentResult(this,"Unit-1").dummydata());
-        getResult().add(new StudentResult(this,"Unit-2").dummydata());
-        getResult().add(new StudentResult(this,"Term-1").dummydata());
-        getResult().add(new StudentResult(this,"Unit-1").dummydata());
-        getResult().add(new StudentResult(this,"Unit-2").dummydata());
-        getResult().add(new StudentResult(this,"Term-1").dummydata());
-        return this;
-    }
 
     Student() {
 
@@ -42,7 +33,7 @@ public class Student extends Model {
     public Student(String id, String content, String details) {
         this.id = id;
         this.content = content;
-        this.details = details;
+        this.detail = details;
     }
 
     @Override
@@ -51,6 +42,13 @@ public class Student extends Model {
     }
 
     public List<StudentResult> getResult() {
+        List<StudentResult> dbResult;
+        if (true) {
+            dbResult = getMany(StudentResult.class, "Student");
+        }
+        if (dbResult.size() > 0) {
+            return dbResult;
+        }
         return result;
     }
 

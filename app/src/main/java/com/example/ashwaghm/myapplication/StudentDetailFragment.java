@@ -81,7 +81,7 @@ public class StudentDetailFragment extends Fragment {
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         mItem = mList.myStudent(getArguments().getString(ARG_ITEM_ID));
-        List<StudentResult> execute = new Select().from(StudentResult.class).execute();
+        List<StudentResult> execute = mItem.getResult();
         recyclerView.setAdapter(new ResultRecyclerViewAdapter(execute));
     }
 }

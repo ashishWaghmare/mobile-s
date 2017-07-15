@@ -37,7 +37,7 @@ public class ResultRecyclerViewAdapter extends RecyclerView.Adapter<ResultRecycl
         StudentResult studentResult = mValues.get(position);
         holder.mItem = studentResult;
         holder.mExamView.setText(studentResult.examName);
-        ArrayAdapter adapter = new ScoreArrayAdapter(holder.mScores.getContext(), R.layout.score_line, studentResult.scoreList);
+        ArrayAdapter adapter = new ScoreArrayAdapter(holder.mScores.getContext(), R.layout.score_line, studentResult.getScore());
         holder.mScores.setAdapter(adapter);
         UIUtils.setListViewHeightBasedOnItems(holder.mScores);
         adapter.notifyDataSetChanged();

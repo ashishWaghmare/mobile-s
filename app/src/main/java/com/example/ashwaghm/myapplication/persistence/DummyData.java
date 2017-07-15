@@ -17,30 +17,48 @@ public class DummyData {
 
     public void generateStudentInDB() {
         // Add some sample items.
-        generateExamInDB(new Student("123", "Aryan Shri", "Need improvements")).dummydata().save();
-        new Student("124", "Shrinivas Rathi", "Good in Maths").dummydata().save();
-        new Student("125", "Rahul Gajan", "Strong all over").dummydata().save();
-        new Student("126", "Amit Bala", "Poor in discipline").dummydata().save();
+        populate("123", "Aryan Shri", "Need improvements");
+        populate("124", "Shrinivas Rathi", "Good in Maths");
+        populate("125", "Rahul Gajan", "Strong all over");
+        populate("126", "Amit Bala", "Poor in discipline");
+    }
 
+    public void populate(String id, String name, String details) {
+        Student student = new Student(id, name, details);
+        student.save();
+        generateExamInDB(student);
     }
 
     public Student generateExamInDB(Student student) {
-        student.add(generateResultInDB(new StudentResult(student, "Unit-1").dummydata()));
-        student.add(generateResultInDB(new StudentResult(student, "Unit-2").dummydata()));
-        student.add(generateResultInDB(new StudentResult(student, "Term-1").dummydata()));
-        student.add(generateResultInDB(new StudentResult(student, "Unit-1").dummydata()));
-        student.add(generateResultInDB(new StudentResult(student, "Unit-2").dummydata()));
-        student.add(generateResultInDB(new StudentResult(student, "Term-1").dummydata()));
+        populate(student, "Unit-1");
+        populate(student, "Unit-2");
+        populate(student, "Term-1");
+        populate(student, "Unit-1");
+        populate(student, "Unit-2");
+        populate(student, "Term-2");
+
         return student;
     }
 
+    public void populate(Student student, String examName) {
+        StudentResult result = new StudentResult(student, "Unit-1");
+        result.save();
+        student.add(generateResultInDB(result));
+    }
+
     public StudentResult generateResultInDB(StudentResult result) {
-        result.add(generateScoreInDB(new Score(result, "English", "100").dummyData()));
-        result.add(generateScoreInDB(new Score(result, "Marathi", "100").dummyData()));
-        result.add(generateScoreInDB(new Score(result, "Hindi", "100").dummyData()));
-        result.add(generateScoreInDB(new Score(result, "Maths", "100").dummyData()));
-        result.add(generateScoreInDB(new Score(result, "Science", "100").dummyData()));
+        populate(result, "English", "100");
+        populate(result, "Marathi", "100");
+        populate(result, "Hindi", "100");
+        populate(result, "Maths", "100");
+        populate(result, "Science", "100");
         return result;
+    }
+
+    public void populate(StudentResult result, String subject, String max) {
+        Score score = new Score(result, subject, max).dummyData();
+        score.save();
+        result.add(score);
     }
 
     public Score generateScoreInDB(Score score) {

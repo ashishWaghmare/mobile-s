@@ -46,7 +46,7 @@ public class StudentRecyclerViewAdapter
         holder.mItem = mValues.get(position);
         //holder.mIdView.setText(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
-        holder.mDetailsView.setText(mValues.get(position).details);
+        holder.mDetailsView.setText(mValues.get(position).detail);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override

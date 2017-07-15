@@ -20,8 +20,9 @@ public class StudentResult extends Model {
     public Student student;
     @Column(name = "ExamName")
     public String examName;
-    @Column(name = "Score ")
-    public List<Score> scoreList = new ArrayList<>();
+
+    @Column(name = "Scores")
+    private List<Score> scoreList = new ArrayList<>();
 
     StudentResult() {
 
@@ -32,17 +33,19 @@ public class StudentResult extends Model {
         this.student = student;
     }
 
-    public StudentResult dummydata() {
-        scoreList.add(new Score(this,"English", "100").dummyData());
-        scoreList.add(new Score(this,"Marathi", "100").dummyData());
-        scoreList.add(new Score(this,"Hindi", "100").dummyData());
-        scoreList.add(new Score(this,"Maths", "100").dummyData());
-        scoreList.add(new Score(this,"Science", "100").dummyData());
-        return this;
-    }
-
     public void add(Score score) {
         scoreList.add(score);
+    }
+
+    public List<Score> getScore() {
+        List<Score> dbScore;
+        if (true) {
+            dbScore = getMany(Score.class, "StudentResult");
+        }
+        if (dbScore.size() > 0) {
+            return dbScore;
+        }
+        return scoreList;
     }
 }
 

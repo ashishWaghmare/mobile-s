@@ -45,7 +45,7 @@
                 android:value="com.example.ashwaghm.myapplication.StudentListActivity" />
         </activity>
         <meta-data android:name="AA_DB_NAME" android:value="skool.db" />
-        <meta-data android:name="AA_DB_VERSION" android:value="1" />
+        <meta-data android:name="AA_DB_VERSION" android:value="2" />
         <meta-data android:name="AA_MODELS" android:value="com.example.ashwaghm.myapplication.model.Student,com.example.ashwaghm.myapplication.model.StudentResult,com.example.ashwaghm.myapplication.model.Score"/>
     </application>
 

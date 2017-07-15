@@ -16,8 +16,10 @@ public class Score extends Model {
 
     @Column(name = "Subject")
     public String subject;
+
     @Column(name = "Max")
     public String max;
+
     @Column(name = "Scored")
     public String scored;
 
