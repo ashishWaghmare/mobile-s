@@ -15,23 +15,27 @@ import java.util.List;
 public class Student extends Model {
 
     @Column(name = "Id")
-    public final String id;
+    public  String id;
     @Column(name = "content")
-    public final String content;
+    public  String content;
 
     @Column(name = "Details")
-    public final String details;
+    public String details;
 
     @Column(name = "StudentResult")
     public List<StudentResult> result = new ArrayList<>();
 
-    {
-        getResult().add(new StudentResult("Unit-1"));
-        getResult().add(new StudentResult("Unit-2"));
-        getResult().add(new StudentResult("Term-1"));
-        getResult().add(new StudentResult("Unit-1"));
-        getResult().add(new StudentResult("Unit-2"));
-        getResult().add(new StudentResult("Term-1"));
+    public void dummydata(){
+        getResult().add(new StudentResult("Unit-1").dummydata());
+        getResult().add(new StudentResult("Unit-2").dummydata());
+        getResult().add(new StudentResult("Term-1").dummydata());
+        getResult().add(new StudentResult("Unit-1").dummydata());
+        getResult().add(new StudentResult("Unit-2").dummydata());
+        getResult().add(new StudentResult("Term-1").dummydata());
+    }
+
+    Student(){
+
     }
 
     public Student(String id, String content, String details) {

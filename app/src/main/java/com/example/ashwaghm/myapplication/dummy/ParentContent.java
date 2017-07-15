@@ -1,10 +1,12 @@
 package com.example.ashwaghm.myapplication.dummy;
 
+import com.example.ashwaghm.myapplication.contracts.Parents;
+
 /**
  * Created by ashwaghm on 08-Jul-17.
  */
 
-public class ParentContent {
+public class ParentContent implements Parents{
 
     /**
      * A dummy authentication store containing known user names and passwords.

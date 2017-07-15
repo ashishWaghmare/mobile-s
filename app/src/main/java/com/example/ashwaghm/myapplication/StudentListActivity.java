@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.ashwaghm.myapplication.contracts.Students;
 import com.example.ashwaghm.myapplication.delivery.StudentRecyclerViewAdapter;
 import com.example.ashwaghm.myapplication.dummy.StudentContent;
 
@@ -31,6 +32,8 @@ public class StudentListActivity extends AppCompatActivity {
      * device.
      */
     private boolean mTwoPane;
+
+    private Students mStudents = StudentContent.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +89,7 @@ public class StudentListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new StudentRecyclerViewAdapter(getApplicationContext(), mTwoPane, StudentContent.ITEMS));
+        recyclerView.setAdapter(new StudentRecyclerViewAdapter(getApplicationContext(), mTwoPane, mStudents.myStudents()));
     }
 
 }

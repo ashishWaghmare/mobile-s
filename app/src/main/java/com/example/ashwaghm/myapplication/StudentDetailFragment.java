@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.ashwaghm.myapplication.contracts.Students;
 import com.example.ashwaghm.myapplication.delivery.ResultRecyclerViewAdapter;
 import com.example.ashwaghm.myapplication.model.Student;
 import com.example.ashwaghm.myapplication.dummy.StudentContent;
@@ -32,6 +33,8 @@ public class StudentDetailFragment extends Fragment {
      */
     private Student mItem;
 
+    private Students mList = StudentContent.getInstance();
+
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
@@ -47,7 +50,7 @@ public class StudentDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = StudentContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = mList.myStudent(getArguments().getString(ARG_ITEM_ID));
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
@@ -71,7 +74,7 @@ public class StudentDetailFragment extends Fragment {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        mItem = StudentContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+        mItem = mList.myStudent(getArguments().getString(ARG_ITEM_ID));
         recyclerView.setAdapter(new ResultRecyclerViewAdapter(mItem.getResult()));
     }
 }
