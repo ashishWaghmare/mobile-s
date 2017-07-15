@@ -15,6 +15,9 @@ import java.util.List;
 
 @Table(name = "StudentResults", id = "dbId")
 public class StudentResult extends Model {
+
+    @Column(name = "Student")
+    public Student student;
     @Column(name = "ExamName")
     public String examName;
     @Column(name = "Score ")
@@ -24,17 +27,22 @@ public class StudentResult extends Model {
 
     }
 
-    public StudentResult(String examName) {
+    public StudentResult(Student student, String examName) {
         this.examName = examName;
+        this.student = student;
     }
 
     public StudentResult dummydata() {
-        scoreList.add(new Score("English", "100").dummyData());
-        scoreList.add(new Score("Marathi", "100").dummyData());
-        scoreList.add(new Score("Hindi", "100").dummyData());
-        scoreList.add(new Score("Maths", "100").dummyData());
-        scoreList.add(new Score("Science", "100").dummyData());
+        scoreList.add(new Score(this,"English", "100").dummyData());
+        scoreList.add(new Score(this,"Marathi", "100").dummyData());
+        scoreList.add(new Score(this,"Hindi", "100").dummyData());
+        scoreList.add(new Score(this,"Maths", "100").dummyData());
+        scoreList.add(new Score(this,"Science", "100").dummyData());
         return this;
+    }
+
+    public void add(Score score) {
+        scoreList.add(score);
     }
 }
 

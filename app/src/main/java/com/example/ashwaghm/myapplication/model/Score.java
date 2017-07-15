@@ -10,6 +10,10 @@ import com.activeandroid.annotation.Table;
 
 @Table(name = "Scores", id = "dbId")
 public class Score extends Model {
+
+    @Column(name = "StudentResult")
+    public StudentResult result;
+
     @Column(name = "Subject")
     public String subject;
     @Column(name = "Max")
@@ -21,15 +25,17 @@ public class Score extends Model {
 
     }
 
-    Score(String subject, String scored, String max) {
+    public Score(StudentResult result, String subject, String scored, String max) {
         this.subject = subject;
         this.max = max;
         this.scored = scored;
+        this.result = result;
     }
 
-    Score(String subject, String max) {
+    public Score(StudentResult result,String subject, String max) {
         this.subject = subject;
         this.max = max;
+        this.result=result;
     }
 
     public String pretty() {

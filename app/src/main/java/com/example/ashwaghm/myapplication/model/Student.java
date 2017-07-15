@@ -26,12 +26,12 @@ public class Student extends Model {
     public List<StudentResult> result = new ArrayList<>();
 
     public Student dummydata() {
-        getResult().add(new StudentResult("Unit-1").dummydata());
-        getResult().add(new StudentResult("Unit-2").dummydata());
-        getResult().add(new StudentResult("Term-1").dummydata());
-        getResult().add(new StudentResult("Unit-1").dummydata());
-        getResult().add(new StudentResult("Unit-2").dummydata());
-        getResult().add(new StudentResult("Term-1").dummydata());
+        getResult().add(new StudentResult(this,"Unit-1").dummydata());
+        getResult().add(new StudentResult(this,"Unit-2").dummydata());
+        getResult().add(new StudentResult(this,"Term-1").dummydata());
+        getResult().add(new StudentResult(this,"Unit-1").dummydata());
+        getResult().add(new StudentResult(this,"Unit-2").dummydata());
+        getResult().add(new StudentResult(this,"Term-1").dummydata());
         return this;
     }
 
@@ -56,5 +56,9 @@ public class Student extends Model {
 
     public void setResult(List<StudentResult> result) {
         this.result = result;
+    }
+
+    public void add(StudentResult result) {
+        this.result.add(result);
     }
 }

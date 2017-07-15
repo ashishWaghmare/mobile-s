@@ -19,7 +19,7 @@ public class Application extends com.activeandroid.app.Application {
         Configuration.Builder config = new Configuration.Builder(this);
         config.addModelClasses(Student.class, Score.class, StudentResult.class);
         ActiveAndroid.initialize(config.create());
-        //new DummyData().generateInDB();
+        //new DummyData().generateStudentInDB();
         //new Delete().from(Student.class).execute();
     }
 }

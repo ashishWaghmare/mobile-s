@@ -10,11 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.activeandroid.Model;
+import com.activeandroid.query.Select;
 import com.example.ashwaghm.myapplication.contracts.Students;
 import com.example.ashwaghm.myapplication.delivery.ResultRecyclerViewAdapter;
 import com.example.ashwaghm.myapplication.model.Student;
 import com.example.ashwaghm.myapplication.dummy.StudentContent;
+import com.example.ashwaghm.myapplication.model.StudentResult;
 import com.example.ashwaghm.myapplication.persistence.LocalDbStudents;
+
+import java.util.List;
 
 /**
  * A fragment representing a single Student detail screen.
@@ -76,6 +81,7 @@ public class StudentDetailFragment extends Fragment {
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         mItem = mList.myStudent(getArguments().getString(ARG_ITEM_ID));
-        recyclerView.setAdapter(new ResultRecyclerViewAdapter(mItem.getResult()));
+        List<StudentResult> execute = new Select().from(StudentResult.class).execute();
+        recyclerView.setAdapter(new ResultRecyclerViewAdapter(execute));
     }
 }
